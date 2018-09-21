@@ -9,6 +9,12 @@ class StudentsController < ApplicationController
 
   end
 
+  def activate
+    set_student
+    @student.activate ? @student.active = false : @student.active = true
+    @student.save
+  end
+
   private
 
     def set_student
